@@ -1,0 +1,20 @@
+{
+    "compilerOptions": {
+      "target": "es2015",
+      "module": "es6",
+      "moduleResolution": "bundler",
+      "lib": ["es2015", "dom"],
+      "strict": true,
+      "esModuleInterop": true,
+      "sourceMap": true,
+      "rootDir": "./src"
+    },
+    "include": [
+      "src/app.ts",
+      "src/models/**/*.ts",
+      "src/services/**/*.ts",
+      "src/controllers/**/*.ts",
+      "src/views/**/*.ts"
+    ],
+    "exclude": ["node_modules", "dist"]
+  }

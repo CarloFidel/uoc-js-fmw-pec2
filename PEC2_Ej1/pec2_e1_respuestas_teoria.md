@@ -35,7 +35,7 @@ El error aparece en el momento de escribir el código, no cuando la aplicación 
 
 TypeScript parte del valor de la derecha y decide el tipo. Con `const`, un primitivo se queda en su tipo literal, porque esa variable no va a cambiar. En un array o en una propiedad de un objeto el valor sí puede cambiar después, y entonces el tipo se ensancha al tipo general.
 
-| Variable | Tipo inferido | Por qué |
+| Variable | Tipo inferido | Explicación |
 | --- | --- | --- |
 | `a` | `1042` | Es un `const` con un número concreto. No se ensancha a `number`. |
 | `b` | `"apples and oranges"` | Igual que `a`: el texto no se puede reasignar, así que se conserva el literal. |
@@ -48,9 +48,9 @@ TypeScript parte del valor de la derecha y decide el tipo. Con `const`, un primi
 
 ## 2. Por qué falla cada línea de `code3.ts`
 
-**`i = 4` — TS2588.** `i` está declarada con `const` y con el tipo literal `3`. Una constante solo se asigna al declararla. La línea `i = 4` intenta asignarla otra vez, y el compilador lo rechaza: *Cannot assign to 'i' because it is a constant*.
+**`i = 4` — TS2588.** `i` está declarada con `const` y con el tipo literal `3`. Una constante solo se asigna al declararla. La línea `i = 4` intenta asignarla otra vez, y typescript lo rechaza: *Cannot assign to 'i' because it is a constant*.
 
-**`j.push('5')` — TS2345.** `j` se inicializa con `[1, 2, 3]`, así que TypeScript infiere `number[]`. `push(4)` es válido porque `4` es un número. `'5'` es un `string`, y un `string` no se puede guardar en un array de números: *Argument of type 'string' is not assignable to parameter of type 'number'*.
+**`j.push('5')` — TS2345.** `j` se inicializa con `[1, 2, 3]`, así que TypeScript infiere `number[]`. `push(4)` es válido porque `4` es un número. `'5'` es un `string`, y un `string` no se puede guardar en un array de números.
 
 **`let k: never = 4` — TS2322.** `never` es el tipo vacío: no existe ningún valor que pertenezca a `never`. `4` es un número, así que no es asignable a `never`.
 

@@ -1,0 +1,21 @@
+{
+  "name": "pec2_ej3_1",
+  "version": "1.0.0",
+  "description": "[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)",
+  "main": "./src/app.ts",
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "build": "webpack",
+    "watch": "webpack --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "ts-loader": "^9.6.2",
+    "typescript": "^5.9.3",
+    "webpack": "^5.112.2",
+    "webpack-cli": "^7.3.1"
+  }
+}
